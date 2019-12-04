@@ -9,124 +9,61 @@
   </head>
 
   <body>
-    <header id="header">
-      <img class="header_logo" src="./img/harry_Potter_Logo.png" alt="">
-      
-      <form action="" id ="form" >
-        <input type="text"  name="name" placeholder="Personaje..." id ="characterSearch" >
-        <input type="submit" value="BUSCAR" id="searchBtn">
-      </form>  
-
-       
-    </header>
-    
-    <div class="body_p">
-      <p > ¿Qué es esto?
-        <br>Esta es una página introductoria de la saga mundiamente conocida de Harry Potter. El
-        <br>objetivo es presentar a los nuevos usuarios (Como tú) los perfiles de cada personaje con sus
-        <br>detalles más personales y básicos.
-        <br>
-        <br>Esta saga fue publicada en el año 1997 por la autora J.K Rowling y llevada a la pantalla grande
-        <br>por el director Chris Columbus. No te vallas y forma parte (Como nosotros) de este mundo mágico de Harry Potter.
-        <br>
-        <br>Aqui abajo, te pasamos los filtros por si los quieres conocer a todos. O en el buscador puedes encontrarlo por nombre.
-        <br>
-        
-    </div>
-    
-    <section >
-     
-        <div class="overlay" id="overlay"> </div>
-          <div class="modals" id="modal"></div>
-            <div class="hide" id = "modal-content">          
-              <button type= "submit" class="modal-btn" id="hide-modal" >X</button>
-            </div>
-          
-          
-      <div id="root" class="center">
-        <h1 id="title" class="titles "></h1>
+    <section class="grid">
+    <header class="header_container hide">
+      <figure class="header_logo">
+        <img src="../img/hplogo.png" alt="">
+      </figure>
+      <figure class="header_house">
+          <img src="../img/hat.png" alt="">
+        </figure>
+        <figure class="header_chart">
+            <img src="../img/image.png" alt="">
+          </figure>
+          <figure class="header_user">
+              <img src="../img/hp.png" alt="">
+            </figure>
+     </header>
+   <div class="login_page ">
+       <figure class="login_logo a">
+         <img src="../img/logoHP.png" alt=""></figure>
+       <form class="form_login" action="">
+         <input class="main_page_input_user" type="text" placeholder=" user_name"> </br>
+         <input class="main_page_input_password" type="text" placeholder=" *********"> </br>
+         <button class="btn_login">LOGIN</button>
+        </form>
       </div>
-      <section class="hide" id= "section_featuring">
-          <div class="center"> 
-              <button id="back_featuring" class= "btn">Regresar</button>
-        </div> 
-          <div class="featuring" id="featuring">
-               
-        </div>  
-      </section>
-        
+   <div class="main_page">
+       <figure class="main_logo a">
+         <img src="../img/logoHP.png" alt="">
+       </figure>
+       <form class="main_searching" action="">
+        <input class="main_searching_input" type="text" placeholder=" Buscando....."> </br>
+       </form>
+   </div>
+      <div class="main_houses c">
+          <table >
+              <caption class= "main_houses_title">Casas</caption>
+              <tr>
+                  <td> <img src="../img/hg2.png" alt=""></td>
+                  <td><img src="../img/hh2.png" alt=""></td>
+              </tr>
+              <tr>
+                <td><img src="../img/hr2.png" alt=""></td>
+                <td><img src="../img/hs2.png" alt=""></td>
+              </tr>
+              </table>
+      </div>
+      <div class="main_charts d"> 
+        <div class="main_charts_title">Charts</div>
+        <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
+        <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
+        <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
+        <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
+      </div>
+      <footer class="footer_container">Hola soy el footer</footer>
     
-  </section>
   
-     <div id="page" class="">
-       
-      
-        <div class="item" id="harryData">
-          
-          <div class="name">Todos los personajes</div>
-          
-      </div>
-        <div class="item" id="page_girls">
-          <div class="name">Mujeres</div>
-         
-        </div>
-        <div class="item" id="page_men">
-          <div class="name">Hombres</div>
-        
-        </div>
-        <div class="item" id="page_griffindor">
-          <div class="name">Gryffindor</div>
-        
-          
-        </div>
-        <div class="item" id="page_Ravenclaw">
-          <div class="name">Ravenclaw</div>
-        </div>
-
-        <div class="item" id="page_Hufflepuff">
-          <div class="name">Hufflepuff</div>
-        </div>
-      
-      
-      <div class="item" id="page_slytherin">
-          <div class="name">Slytherin</div>
-        </div>
-    </div>  
-    <div class="search-active hide"></div>
-
-      <section class="hide " id="categoryAll">
-        <div class="center"> 
-          <button id="back" class= "btn">Regresar</button>
-          <button id="orderAZ" class= "btn">Todos los personajes de la A-Z</button>
-          <button id="orderZA" class= "btn">Todos los personajes de la Z-A</button>
-        </div>
-          <div  class="container">
-        <div id="object" > </div>
-      </div>
-
-       
-      </section>
-
-      
-    <footer >
-      
-      <div class="footer_band">
-        <p >¡Siguenos en nuestras redes sociales!</p> 
-      </div>
-        <div class ="footer_icons ">   
-          <img src="../img/twitter.png" alt="twitter-logo" class="icon" >
-          <img src="../img/wapp.png" alt="wapp-logo" class="icon">
-          <img src="../img/fb.png" alt="fb-logo" class="icon">
-        
-      </div>
-    </div>
-      
-        
-    </footer>
-    
-    
-    <script type="module" src="data.js"></script>
-    <script type="module" src="main.js"></script>
-  </div>
+</section>
   </body>
-</html>
+  </html>

@@ -110,7 +110,7 @@ $form.addEventListener('submit',(event)=>{
 
   let nameValue = document.getElementById('characterSearch').value;
   function searchByName (searching){
-      return  searching.name == nameValue
+      return  searching.name == nameValue;
     }
    let characterSearching = harryData.find(searchByName);
       if (characterSearching ===undefined){
