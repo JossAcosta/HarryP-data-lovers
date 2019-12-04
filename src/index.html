@@ -9,39 +9,45 @@
   </head>
 
   <body>
-    <section class="grid">
-    <header class="header_container hide">
-      <figure class="header_logo">
-        <img src="../img/hplogo.png" alt="">
-      </figure>
-      <figure class="header_house">
-          <img src="../img/hat.png" alt="">
+    
+      <div class="login_page 
+      hide" id="login_page">
+          <figure class="login_logo a">
+            <img src="../img/logoHP.png" alt=""></figure>
+          <form class="form_login" action="">
+            <input class="main_page_input_user" type="text" placeholder=" user_name"> </br>
+            <input class="main_page_input_password" type="text" placeholder=" *********"> </br>
+            <button  class="btn_login" id="login_button">LOGIN</button>
+           </form>
+         </div>
+
+    <header class="header_container  " id="header">
+        <figure class="header_logo">
+          <img src="../img/hplogo.png" alt="">
         </figure>
-        <figure class="header_chart">
-            <img src="../img/image.png" alt="">
+        <figure class="header_house">
+            <img src="../img/hat.png" alt="">
           </figure>
-          <figure class="header_user">
-              <img src="../img/hp.png" alt="">
+          <figure class="header_chart">
+              <img src="../img/image.png" alt="">
             </figure>
-     </header>
-   <div class="login_page ">
-       <figure class="login_logo a">
-         <img src="../img/logoHP.png" alt=""></figure>
-       <form class="form_login" action="">
-         <input class="main_page_input_user" type="text" placeholder=" user_name"> </br>
-         <input class="main_page_input_password" type="text" placeholder=" *********"> </br>
-         <button class="btn_login">LOGIN</button>
-        </form>
-      </div>
-   <div class="main_page">
+            <figure class="header_user">
+                <img src="../img/hp.png" alt="">
+              </figure>
+       </header>
+    <section class="grid " id="section_main">
+
+   
+   <div class="main_page " id="main_page">
        <figure class="main_logo a">
          <img src="../img/logoHP.png" alt="">
        </figure>
        <form class="main_searching" action="">
         <input class="main_searching_input" type="text" placeholder=" Buscando....."> </br>
        </form>
+       <div class="main_searching_result"></div>
    </div>
-      <div class="main_houses c">
+      <div class="main_houses  ">
           <table >
               <caption class= "main_houses_title">Casas</caption>
               <tr>
@@ -54,16 +60,18 @@
               </tr>
               </table>
       </div>
-      <div class="main_charts d"> 
+      <div class="houses_grid hide"> </div>
+      <div class="main_charts "> 
         <div class="main_charts_title">Charts</div>
         <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
         <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
         <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
         <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
       </div>
-      <footer class="footer_container">Hola soy el footer</footer>
+      <footer class="footer_container ">Hola soy el footer</footer>
     
   
 </section>
+<script src="main.js"></script>
   </body>
   </html>

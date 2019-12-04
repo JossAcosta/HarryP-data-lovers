@@ -1,37 +1,116 @@
+/*----variables--------*/
+:root{
+  --purple-color:rgba(97,61,127,0.91);
+  --gradientPurple-color : linear-gradient(to right, rgba(97,61,127,0.91) 0%, rgba(97,61,127,0.91) 8%, rgba(95,60,124,0.91) 10%, rgba(3,1,4,1) 100%);
+  --gradientPurpleLeft-color : linear-gradient(to right, rgba(97,61,127,0.91) 0%, rgba(97,61,127,0.91) 8%, rgba(95,60,124,0.91) 20%, rgb(247, 232, 255) 100%);
+  --box:0px 0 2px 1px #e6e5e9;
+  }
 *{
   margin:0;
-
+  padding: 0;
 }
 body{
   
 }
+
+.login_page{
+  
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row: 1/2;
+  height: 100vh;
+  display: grid;
+  grid-template-columns:  repeat(4, 25%); 
+  grid-template-rows: 300px 1fr 1fr ;
+
+}
+
+.login_logo{
+  
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 1/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--gradientPurpleLeft-color);
+ 
+}
+.login_logo img{
+  width: 75%;
+   padding: 0%;
+   margin: 0%;
+}
+
+.form_login{
+ 
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row: 1/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form_login input{
+
+  width: 300px;
+  height: 45px;
+  border:none;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+  color:black;
+  margin: 20px;
+  
+ 
+}
+.btn_login{
+  background-color: var(--purple-color);
+  height: 40px;
+  color:white;
+  font-size: 24px;
+  font-weight: bolder;
+  padding:5px 20px;
+  border:none;
+  border-radius:20px;
+  cursor: pointer;
+}
 header{
   width: 100%;
   height: 100px;
-  background: rgba(97,61,127,0.91);
+  /*background: var(--purple-color);
   background: -moz-linear-gradient(left, rgba(97,61,127,0.91) 0%, rgba(97,61,127,0.91) 8%, rgba(95,60,124,0.91) 10%, rgba(3,1,4,1) 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, rgba(97,61,127,0.91)), color-stop(8%, rgba(97,61,127,0.91)), color-stop(10%, rgba(95,60,124,0.91)), color-stop(100%, rgba(3,1,4,1)));
   background: -webkit-linear-gradient(left, rgba(97,61,127,0.91) 0%, rgba(97,61,127,0.91) 8%, rgba(95,60,124,0.91) 10%, rgba(3,1,4,1) 100%);
   background: -o-linear-gradient(left, rgba(97,61,127,0.91) 0%, rgba(97,61,127,0.91) 8%, rgba(95,60,124,0.91) 10%, rgba(3,1,4,1) 100%);
   background: -ms-linear-gradient(left, rgba(97,61,127,0.91) 0%, rgba(97,61,127,0.91) 8%, rgba(95,60,124,0.91) 10%, rgba(3,1,4,1) 100%);
-  background: linear-gradient(to right, rgba(97,61,127,0.91) 0%, rgba(97,61,127,0.91) 8%, rgba(95,60,124,0.91) 10%, rgba(3,1,4,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#613d7f', endColorstr='#030104', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#613d7f', endColorstr='#030104', GradientType=1 );*/
+  background: var(--gradientPurple-color);
+  
+  
   display: grid;
- /* background-color: rgb(212,175,55);*/
+ 
 }
 .grid{
   display: grid;
   grid-template-columns: repeat(4,25%);
-  grid-template-rows: 110px 500px  510px 1fr 420px ;
+  
 
 }
+.hide{
+  display: none !important;
+  
+}
+
 .header_container{
+  position: fixed;
   grid-column: 1/5;
+  grid-row: 1/2;
   width: 100%;
-  height: 100px;
   display: grid;
   grid-template-columns: repeat(4, 25%);  
-  position: fixed;
+  
+  
 }
 .header_logo{
   padding-left: 20%;
@@ -68,102 +147,47 @@ header{
   height:70px;
   
 }
-.login_page{
- 
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row: 2/3;
-  
-  display: grid;
-  grid-template-columns:  repeat(4, 25%); 
-  grid-template-rows: 300px 1fr 1fr ;
-
-}
-
-.login_logo{
-  
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row: 1/2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
-}
-.login_logo img{
-  width: 90%;
-   padding: 0%;
-   margin: 0%;
-}
-
-.form_login{
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row: 2/4;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.form_login input{
-
-  width: 300px;
-  height: 45px;
-  border:none;
-  border-bottom: 2px solid black;
-  background-color: transparent;
-  color:black;
-  
- 
-}
-.btn_login{
-  background-color: rgb(70, 24, 131);
-  height: 40px;
-  color:white;
-  font-size: 24px;
-  font-weight: bolder;
-  padding:5px 20px;
-  border:none;
-  border-radius:20px;
-}
 .main_page{
   grid-column: 1/5;
-  grid-row: 3/4;
-  
+  grid-row: 1/3;
+  height:100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   display: grid;
-  grid-template-columns:  repeat(4, 25%);
-  grid-template-rows: 1fr 1fr;
+  
+ 
   
 }
 
 .main_logo{
   grid-column-start: 2;
   grid-column-end: 4;
-  grid-row: 1/2;
+  grid-row: 1/4;
   display: flex;
+  
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
  
 }
 .main_logo img{
-  width: 70%;
+  width: 65%;
    padding: 0%;
    margin: 0%;
+   margin-top: 40px;
 }
 .main_searching{
   grid-column-start: 2;
   grid-column-end: 4;
-  grid-row: 2/3;
+  grid-row: 3/3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
-.main_searching_input{
+.main_searching input{
   
   width: 300px;
   height: 45px;
@@ -173,10 +197,16 @@ header{
   border-right: none;
   
 }
+.main_searching_result{
+grid-column: 1/5;
+grid-row: 3/4;
+height: 20vh;
+}
 .main_houses{
   width: 100%;
+  height: 90vh;
   grid-column: 1/5;
-  grid-row: 4/5;
+  grid-row: 3/4;
   background-color: black;
  /* background: rgba(97,61,127,0.91);
   background: -moz-linear-gradient(left, rgba(97,61,127,0.91) 0%, rgba(97,61,127,0.91) 8%, rgba(95,60,124,0.91) 10%, rgba(3,1,4,1) 100%);
@@ -202,11 +232,13 @@ header{
 }
 .main_charts{
   width: 100%;
+  height: 75vh;
   grid-column: 1/5  ;
-  grid-row: 5/6;
+  grid-row: 4/5;
   display: grid;
+  
   grid-template-columns: repeat(4, 25%);  
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 100px 1fr;
   
 }
 .main_charts img{
@@ -215,6 +247,7 @@ header{
 
 .main_charts_title{
   grid-column: 1/5;
+  grid-row: 1/2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -222,7 +255,7 @@ header{
 .bodercito{
 
   width: 100%;
-  grid-row-start: 2;
+  grid-row-start: 2/3;
   
   display: flex;
   justify-content: center;
@@ -230,16 +263,13 @@ header{
 }
 .footer_container{
   width: 100%;
- height: 100px;
+ height: 60px;
   grid-column: 1/5  ;
-  grid-row: 6;
+  grid-row: 5/6;
   background-color: black;
   color: whitesmoke;
   display:flex;
   justify-content: center;
   align-items: center;
   
-}
-.hide{
-  display: none important!;
 }

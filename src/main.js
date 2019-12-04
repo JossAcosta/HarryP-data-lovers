@@ -1,4 +1,20 @@
-import {POTTER} from './data/potter/potter.js';
+loginBtn = document.getElementById("login_button");
+loginPage = document.getElementById("login_page");
+mainPage=document.getElementById("main_page");
+nav=document.getElementById("header");
+sectionMain=document.getElementById("section_main");
+
+loginBtn.addEventListener('click', event=>{
+  loginPage.style.display = 'none';
+  mainPage.style.display='block';
+});
+/*
+loginBtn.addEventListener('click',(event)=>{
+  l
+});
+
+
+/*import {POTTER} from './data/potter/potter.js';
 import {filterGirlsCategory, filterMenCategory} from './data.js';
 
 (async function load (){
@@ -101,6 +117,7 @@ const createTemplateCard = list =>{
 
   };
 //--------Buscardor por nombre---------------
+
 $form.addEventListener('submit',(event)=>{
   event.preventDefault();
   const section_featuring = document.getElementById('section_featuring');
@@ -190,3 +207,4 @@ window.onscroll = function () {
     timer = null;
   }, 150);
 }
+*/
