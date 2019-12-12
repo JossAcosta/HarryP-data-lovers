@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet"/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
   </head>
 
   <body>
@@ -23,16 +25,16 @@
 
     <header class="header_container  " id="header">
         <figure class="header_logo">
-          <img src="../img/hplogo.png" alt="">
+          <a href="#main_page"><img src="../img/hplogo.png" alt=""></a> 
         </figure>
         <figure class="header_house">
-            <img src="../img/hat.png" alt="">
+          <a href="#houses"><img src="../img/hat.png" alt=""></a> 
           </figure>
           <figure class="header_chart">
-              <img src="../img/image.png" alt="">
+            <a href="#charts"><img src="../img/image.png" alt=""></a> 
             </figure>
             <figure class="header_user">
-                <img src="../img/hp.png" alt="">
+              <a href="#filter_houses"><img src="../img/hp.png" alt=""></a> 
               </figure>
        </header>
     <section class="grid " id="section_main">
@@ -42,36 +44,53 @@
        <figure class="main_logo a">
          <img src="../img/logoHP.png" alt="">
        </figure>
-       <form class="main_searching" action="">
-        <input class="main_searching_input" type="text" placeholder=" Buscando....."> </br>
-       </form>
-       <div class="main_searching_result"></div>
+      <form class="main_searching" action="" id="form">
+        <input id="characterSearch" class="main_searching_input" type="text" placeholder=" Buscando....."> </br>
+      </form>
+       <div class="main_searching_result" id="results_searching"></div>
    </div>
-      <div class="main_houses  ">
+      <div class="main_houses  " id= "houses">
           <table >
               <caption class= "main_houses_title">Casas</caption>
               <tr>
-                  <td> <img src="../img/hg2.png" alt=""></td>
-                  <td><img src="../img/hh2.png" alt=""></td>
+                  <td><figure id= "page_griffindor"> 
+                      <a href="#filter_houses"><img src="../img/hg2.png" alt=""></a>
+                      </figure></td>
+                  <td>
+                      <a href="#filter_houses">  
+                        <img id= "page_Hufflepuff" src="../img/hh2.png" alt=""></a></td>
               </tr>
               <tr>
-                <td><img src="../img/hr2.png" alt=""></td>
-                <td><img src="../img/hs2.png" alt=""></td>
+                <td><a href="#filter_houses">
+                  <img id= "page_Ravenclaw" src="../img/hr2.png" alt=""></a></td>
+                <td><a href="#filter_houses">
+                  <img id= "page_slytherin" src="../img/hs2.png" alt=""></a></td>
               </tr>
               </table>
       </div>
       <div class="houses_grid hide"> </div>
-      <div class="main_charts "> 
+      <div class="main_charts " id ="charts"> 
         <div class="main_charts_title">Charts</div>
-        <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
-        <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
-        <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
-        <div class="bodercito"> <img src="../img/chartex.png" alt=""></div>
+        <div class="bodercito"> <canvas id="ages" ></canvas></div>
+        <div class="bodercito"> <canvas id="gender" ></canvas></div>
+        <div class="bodercito"><canvas id="housesPie" ></canvas></div>
+        <div class="bodercito"> <canvas id="alive" ></canvas></div>
       </div>
+      
+    </section>
+
+    <div class="title hide" id="filter_houses">BIENVENIDO</div>
+
+      <section class="filter_container hide" id= "filter" >
+       
+      </section>
       <footer class="footer_container ">Hola soy el footer</footer>
-    
-  
-</section>
+       
+       
+       
+       
+      
+     
 <script src="main.js"></script>
   </body>
   </html>

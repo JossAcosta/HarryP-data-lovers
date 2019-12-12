@@ -1,21 +1,3 @@
-loginBtn = document.getElementById("login_button");
-loginPage = document.getElementById("login_page");
-mainPage=document.getElementById("main_page");
-nav=document.getElementById("header");
-sectionMain=document.getElementById("section_main");
-
-loginBtn.addEventListener('click', event=>{
-  loginPage.style.display = 'none';
-  mainPage.style.display='block';
-});
-/*
-loginBtn.addEventListener('click',(event)=>{
-  l
-});
-
-
-/*import {POTTER} from './data/potter/potter.js';
-import {filterGirlsCategory, filterMenCategory} from './data.js';
 
 (async function load (){
   async function getData(url){
@@ -23,188 +5,231 @@ import {filterGirlsCategory, filterMenCategory} from './data.js';
      const data= await response.json()
      return data;
    }
-const harryData= await getData('https://hp-api.herokuapp.com/api/characters')
-const filterGriffindor = await getData('https://hp-api.herokuapp.com/api/characters/house/Gryffindor')
-const filterRavenclaw = await getData('https://hp-api.herokuapp.com/api/characters/house/Ravenclaw')
-const filterhufflepuff = await getData('https://hp-api.herokuapp.com/api/characters/house/Hufflepuff')
-const filterslytherin = await getData('https://hp-api.herokuapp.com/api/characters/house/Slytherin')
-const filterGirlsNames = filterGirlsCategory(POTTER);
-const filterMenNames = filterMenCategory(POTTER);
-const orderNames= app.orderNames(app.selectData(POTTER));
-console.log(orderNames);
-const  reverseZA = app.reverseNames(app.orderNames(app.selectData(POTTER)));
+     const harryData = await getData('http://hp-api.herokuapp.com/api/characters')
+     const nameList = await getData('http://hp-api.herokuapp.com/api/characters')
+     const griffindorList = await getData('http://hp-api.herokuapp.com/api/characters/house/Gryffindor')
+     const ravenclawList = await getData('http://hp-api.herokuapp.com/api/characters/house/Ravenclaw')
+     const HufflepuffList = await getData('http://hp-api.herokuapp.com/api/characters/house/Hufflepuff')
+     const SlytherinList = await getData('http://hp-api.herokuapp.com/api/characters/house/Slytherin')
+     const characterContainer = document.getElementById('filter');
+     const gryffindor = document.getElementById('page_griffindor');
+     const hufflepuff = document.getElementById('page_Hufflepuff');
+     const ravenclaw = document.getElementById('page_Ravenclaw');
+     const Slytherin = document.getElementById('page_slytherin');
+     const filter_houses = document.getElementById('filter_houses');
+    
+     gryffindor.addEventListener('click', event=> {
+        const IdFun = event.currentTarget.id;
+        console.log(IdFun)
+       filter_houses.classList.remove('hide');
+       filter.classList.remove('hide');
+         createTemplateCard(IdFun);     
+        }) 
+     hufflepuff.addEventListener('click', event=> {
+       const IdFun = event.currentTarget.id;
+       console.log(IdFun)
+       // page.classList.add('hide');
+        //categoryAll.classList.remove('hide');
+        createTemplateCard(IdFun);     
+       }) 
+     ravenclaw.addEventListener('click', event=> {
+      const IdFun = event.currentTarget.id;
+      console.log(IdFun)
+      // page.classList.add('hide');
+       //categoryAll.classList.remove('hide');
+       createTemplateCard(IdFun);     
+      }) 
+      Slytherin.addEventListener('click', event=> {
+        const IdFun = event.currentTarget.id;
+        console.log(IdFun)
+        // page.classList.add('hide');
+         //categoryAll.classList.remove('hide');
+         createTemplateCard(IdFun);     
+        }) 
+     const createTemplateCard = list =>{
+      console.log(list);
+      let strObj=[];
+    
+      let templateCard ='';
+      if (list ===  "page_griffindor"){
+        strObj=griffindorList;
+      }if (list ===  "page_Hufflepuff"){
+        strObj=HufflepuffList;
+      }if (list ===  "page_Ravenclaw"){
+        strObj=ravenclawList;
+      }if (list ===  "page_slytherin"){
+        strObj=SlytherinList;
+      }
+      strObj.forEach(hpData => {
+        const card = ` <div class= "cards_container flip-card">
+        <div class=" flip-card-inner">
+          <div class = "cards flip-card-front" id="${hpData.name}">
+             <img class ="hp-image" src = "${hpData.image}"/>
+             <p class = "hp-name">${hpData.name}</p>
+            </div>
+          <div class="flip-card-back">
+             <p class = "hp-name">${hpData.name}</p>
+             <p class = "info"><b>Casa:</b> </br>${hpData.house}</p>
+          <p class = "info"><b>Actor:</b> </br>${hpData.actor}</p>
+          <p class = "info"><b>Descendencia:</b> </br>${hpData.ancestry}</p>
+          <p class = "info"><b>Patronus:</b></br> ${hpData.patronus}</p>
+          </div>
+       </div>
+        </div> `;
+        templateCard += card;
+      });
 
-const characterContainer = document.getElementById('object');
-const page = document.getElementById('page');
-const categoryAll =document.getElementById('categoryAll');
-const back = document.getElementById('back');
-const orderAZ= document.getElementById('orderAZ');
-const orderZA= document.getElementById('orderZA');
-const arrTitle = ['Bienvenidos','Todos Los Personajes', 'Personajes Femeninos','Personajes Masculinos','Casa Griffindor','Casa Hufflepuff', 'Casa Slytherin', 'Casa Ravenclaw'];
-const title = document.getElementById("title");
-title.innerHTML=`${arrTitle[0]}`;
-  
-const $modal = document.getElementById('modal');
-const $overlay = document.getElementById('overlay');
-const hide_modal_btn= document.getElementById('hide-modal');
-const modalContent =document.getElementById('modal-content');
-
-const featuringContainer= document.getElementById('featuring');
-const featuringBtn = document.getElementById('back_featuring');
-const $form= document.getElementById('form');
-//-------------Botones del menú categorias---------
-page.addEventListener('click', event =>{
-const x = event.target.id;
-document.getElementById(x).addEventListener('click', event=> {
-  const IdFun = event.currentTarget.id;
-  console.log(IdFun)
-   page.classList.add('hide');
-   categoryAll.classList.remove('hide');
-   const element = createTemplateCard(IdFun);
-     // title.innerHTML=`${arrTitle[1]}`;
-   addEventClick(element);
-   
-  })
-})
-   back.addEventListener('click', event=> {
-   page.classList.remove('hide');
-   categoryAll.classList.add('hide');
-   title.innerHTML=`${arrTitle[0]}`;
-    });
-//--------Botones ordenar alfabeticamen--------------
-  orderAZ.addEventListener('click', event=> {
-    const element = createTemplateCard(orderNames);
-    console.log(element)
-    addEventClick(element);
-   });
-   orderZA.addEventListener('click', event=> {
-    const element = createTemplateCard(reverseZA);
-    addEventClick(element);
-   });
-//------Funcion templates de categorias-------
-const createTemplateCard = list =>{
-  console.log(list);
-  let strObj=[];
-  let templateCard ='';
-  if(list === "harryData"){
-    strObj=harryData;
-  } if (list ===  "page_girls"){
-    strObj=filterGirlsNames;
-  } if (list ===  "page_men"){
-    strObj=filterMenNames;
-  }if (list ===  "page_griffindor"){
-    strObj=filterGriffindor;
-  }if (list ===  "page_Hufflepuff"){
-    strObj=filterhufflepuff;
-  }if (list ===  "page_Ravenclaw"){
-    strObj=filterRavenclaw;
-  }if (list ===  "page_slytherin"){
-    strObj=filterslytherin;
-  } if (list ===  orderNames){
-    strObj=orderNames;
-  }if (list ===  reverseZA){
-    strObj=reverseZA;
-  }
-  strObj.forEach(hpData => {
-    const card = `
-    <div class = "cards" id="${hpData.name}">
-    <img class ="hp-image" src = "${hpData.image}"/>
-    <p class = "hp-name">${hpData.name}</p>
-    </div> `;
-    templateCard += card;
-  });
-  characterContainer.innerHTML = templateCard;
-
-  };
-//--------Buscardor por nombre---------------
-
-$form.addEventListener('submit',(event)=>{
-  event.preventDefault();
-  const section_featuring = document.getElementById('section_featuring');
-  featuringContainer.classList.add('search-active');
-  page.classList.add('hide');
-  section_featuring.classList.remove('hide');
-
-  let nameValue = document.getElementById('characterSearch').value;
-  function searchByName (searching){
-      return  searching.name == nameValue;
-    }
-   let characterSearching = harryData.find(searchByName);
-      if (characterSearching ===undefined){
-  //featuringContainer.innerHTML = JSON.stringify(characterSearching);  
-    featuringContainer.innerHTML= `<p class = "hp-name">No ha encontrado el personaje </p> `;
-     } else if (characterSearching.name == nameValue){
-    const charInfo= `
-    <div class="cards card_center">
-    <img class ="hp-image" src = "${characterSearching.image}"/>
-    <p class = "info">Nombre: ${characterSearching.name}</p>
-    <p class = "info"> Casa: ${characterSearching.house}</p>
-    <p class = "info">Actor: ${characterSearching.actor}</p>
-    <p class = "info">Descendencia: ${characterSearching.ancestry}</p>
-    <p class = "info">Patronus: ${characterSearching.patronus}</p>
-    </div> `;
-    featuringContainer.innerHTML= charInfo;
-     }
-})
-//---- evento regresar al menu princial----------
-
-featuringBtn.addEventListener('click',event=> {
-  page.classList.remove('hide');
-  section_featuring.classList.add('hide');
-})
-//-----Mostar info en tarjetas-----------------
-function addEventClick(){
-  const cards = document.querySelectorAll('.cards');
-  cards.forEach(element=>
-    element.addEventListener('click', function(){
-      const characterId= event.currentTarget.id;
-      console.log(characterId);
-      const infoHp = harryData.filter(infoEachOne=> infoEachOne.name=== characterId
-        );
-        infoHp.forEach(function(hpData){
-          const cardInfo= `
-          <img class ="hp-image" src = "${hpData.image}"/>
-          <p class = "info">Nombre: ${hpData.name}</p>
-          <p class = "info">Casa: ${hpData.house}</p>
-          <p class = "info">Actor: ${hpData.actor}</p>
-          <p class = "info">Descendencia: ${hpData.ancestry}</p>
-          <p class = "info">Patronus: ${hpData.patronus}</p>
-          `;
-          modal.innerHTML= cardInfo;
+      characterContainer.innerHTML = templateCard;
+      
+      };
+      let input_search = document.getElementById('characterSearch');
+      let results_container = document.getElementById('')
+     
+      let objetosDisponibles = harryData;
+      input_search.addEventListener('keyup',function(e){
+          filter_houses.classList.remove('hide');
+          filter.classList.remove('hide');
+          var similars = objetosDisponibles.filter(function(objeto){
+          
+           return objeto.name.includes(input_search.value);
+          });
+          console.log(similars);
+          let templateCard ='';
+          similars.forEach(hpData => {
+            const card = ` <div class= "cards_container flip-card">
+          <div class=" flip-card-inner">
+            <div class = "cards flip-card-front" id="${hpData.name}">
+               <img class ="hp-image" src = "${hpData.image}"/>
+               <p class = "hp-name">${hpData.name}</p>
+              </div>
+            <div class="flip-card-back">
+               <p class = "hp-name">${hpData.name}</p>
+               <p class = "info"><b>Casa:</b> </br>${hpData.house}</p>
+            <p class = "info"><b>Actor:</b> </br>${hpData.actor}</p>
+            <p class = "info"><b>Descendencia:</b> </br>${hpData.ancestry}</p>
+            <p class = "info"><b>Patronus:</b></br> ${hpData.patronus}</p>
+            </div>
+         </div>
+          </div> `;
+          templateCard += card;
         });
-      showModal()  
-    }))
+  
+        characterContainer.innerHTML = templateCard;
+        
+        
+        });
+
+  
+var dataHarry=harryData;
+var coutnMale = 0;
+var coutnFemale = 0;
+for ( var i = 0; i < dataHarry.length; i++ ) {
+    if ( dataHarry[i].gender =='male' ) {
+      coutnMale = coutnMale + 1;
+    }
+    if ( dataHarry[i].gender =='female' ) {
+      coutnFemale = coutnFemale + 1;
+    }
 }
-//----Mostar y ocultar modal----------------
-function showModal() {
+console.log(coutnMale);
+console.log(coutnFemale);
+
+let countGryffindor=0;
+let countSlytherin=0;
+let countRavenclaw=0;
+let countHufflepuff=0;
+let countAlive=0;
+let countNoAlive=0;
+for ( var i = 0; i < dataHarry.length; i++ ) {
+  if ( dataHarry[i].house =='Gryffindor' ) {
+    countGryffindor = countGryffindor + 1;
+  }
+  if ( dataHarry[i].house =='Slytherin' ) {
+    countSlytherin = countSlytherin + 1;
+  }
+  if ( dataHarry[i].house =='Ravenclaw' ) {
+    countRavenclaw = countRavenclaw + 1;
+  }
+  if ( dataHarry[i].house =='Hufflepuff' ) {
+    countHufflepuff = countHufflepuff + 1;
+  }
+  if(dataHarry[i].alive == true){
+    countAlive+=1;
+  }
+  if(dataHarry[i].alive !== true){
+    countNoAlive+=1;
+  }
+}
+console.log(countGryffindor, countSlytherin,  countRavenclaw, countHufflepuff,  countAlive, countNoAlive);
+
+   // pie chart data
+    let genderData = [
+      {
+          value: coutnMale,
+          color:"#878BB6"
+      },
+      
+      {
+          value : coutnFemale,
+          color : "#FFEA88"
+      }
+  ];
+  let housesData = [
+    {
+        value: countGryffindor,
+        color:"#878BB6"
+    },
+    {
+        value : countSlytherin,
+        color : "#4ACAB4"
+    },
+    {
+        value : countRavenclaw,
+        color : "#FF8153"
+    },
+    {
+        value : countHufflepuff,
+        color : "#FFEA88"
+    }
+];
+let aliveData = [
+  {
+      value: countAlive,
+      color:"#878BB6"
+  },
+    {
+      value : countNoAlive,
+      color : "#FFEA88"
+  }
+];
+let pieData = [
+  {
+      value: countAlive,
+      color:"#878BB6"
+  },
+    {
+      value : countNoAlive,
+      color : "#FFEA88"
+  }
+];
+  // pie chart options
+  let pieOptions = {
+       segmentShowStroke : false,
+       animateScale : true
+  }
+  // get pie chart canvas
+  let ages= document.getElementById("ages").getContext("2d");
+  let gender= document.getElementById("gender").getContext("2d");
+  let housesPie = document.getElementById("housesPie").getContext("2d");
+  let alive= document.getElementById("alive").getContext("2d");
+  // draw pie chart
+  new Chart(ages).Pie(pieData, pieOptions);
+  new Chart(gender).Pie(genderData, pieOptions);
+  new Chart(housesPie).Pie(housesData, pieOptions);
+  new Chart(alive).Pie(aliveData, pieOptions);
+
+
  
-  $overlay.classList.add('active');
-  $modal.classList.add('modal');
-  title.classList.add('overlay');  
-  $modal.classList.remove('hide');
-  modalContent.classList.remove('hide');
-}
-hide_modal_btn.addEventListener('click', hideModal)
-function hideModal(){
-        $modal.classList.add('hide');
-        $overlay.classList.remove('active');
-        title.classList.remove('overlay');
-        modalContent.classList.add('hide');
-       }  
-})()
-//------scrolling-------------------
-let timer = null;
-window.onscroll = function () {
-  if (timer) {
-    clearTimeout(timer);
-    timer = null;
-  }
-  else {
-    page.classList.toggle('scrolling');
-  }
-  timer = setTimeout(function () {
-    page.classList.toggle('scrolling');
-    timer = null;
-  }, 150);
-}
-*/
+ })()
+ 
+ 

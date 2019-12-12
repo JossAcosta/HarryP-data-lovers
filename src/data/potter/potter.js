@@ -551,8 +551,3 @@ export const POTTER =[
   },
 ];
 window.POTTER = POTTER;
-/*let namesP =[];
-for (let i= 0; i<POTTER.length; i++){
-  namesP.push(POTTER[i].name);
-}
-console.log(namesP);*/

@@ -5,10 +5,15 @@
   --gradientPurpleLeft-color : linear-gradient(to right, rgba(97,61,127,0.91) 0%, rgba(97,61,127,0.91) 8%, rgba(95,60,124,0.91) 20%, rgb(247, 232, 255) 100%);
   --box:0px 0 2px 1px #e6e5e9;
   }
+@font-face {
+  font-family: hpFont;
+  src: url(HARRYP__.TTF);
+}
 *{
   margin:0;
   padding: 0;
 }
+
 body{
   
 }
@@ -104,6 +109,7 @@ header{
 
 .header_container{
   position: fixed;
+  z-index: 2;
   grid-column: 1/5;
   grid-row: 1/2;
   width: 100%;
@@ -191,7 +197,7 @@ header{
   
   width: 300px;
   height: 45px;
-  border: 2px solid black;
+  border: 2px solid var(--purple-color);
   border-top: none;
   border-left: none;
   border-right: none;
@@ -204,7 +210,7 @@ height: 20vh;
 }
 .main_houses{
   width: 100%;
-  height: 90vh;
+  height: 110vh;
   grid-column: 1/5;
   grid-row: 3/4;
   background-color: black;
@@ -219,6 +225,10 @@ height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
+}
+.main_houses img{
+  cursor: pointer;
 }
 .main_houses_title{
   font-size: 36px;
@@ -232,7 +242,7 @@ height: 20vh;
 }
 .main_charts{
   width: 100%;
-  height: 75vh;
+  height: 90vh;
   grid-column: 1/5  ;
   grid-row: 4/5;
   display: grid;
@@ -251,6 +261,7 @@ height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 150px;
 }
 .bodercito{
 
@@ -272,4 +283,122 @@ height: 20vh;
   justify-content: center;
   align-items: center;
   
+}
+.filter_container{
+  
+  display: grid;
+  grid-template-columns: repeat(4, 25%);  
+  grid-row-gap: 10px;
+  
+}
+.grid_card{
+  grid-column: 1/5;
+}
+.cards_container{
+ 
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  margin: 30px 50px;
+ /* background-color:  rgba(199, 199, 199, 0.91);
+  border: 2px solid rgba(189, 186, 186, 0.91);*/
+  justify-content: center;
+  perspective: 1000px;
+}
+
+
+.cards{
+  
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.hp-image{
+  margin:3%;
+  display: inherit;
+  flex-flow: column nowrap;
+  width: 165px;
+  height: 220px;
+  border: none;
+  border-radius: 50%;
+  margin-right: 5% ;
+  
+}
+.hp-name{
+  font-family: "hpFont";
+  font-size: 30px;
+  
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  padding-top: 5px;
+ 
+  color: rgba(73, 48, 95, 0.91);
+  letter-spacing: 1px;
+
+  margin-right: 5% ;
+  margin-bottom: 5% ;
+  
+}
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: rgba(220, 220, 220, 0.91);
+  border: 2px solid rgba(219, 216, 216, 0.91);
+  
+}
+
+.flip-card-back {
+  background-color: rgba(220, 220, 220, 0.91);
+  border: 2px solid rgba(219, 216, 216, 0.91);
+  color: var(--gradientPurple-color);
+  transform: rotateY(180deg);
+  padding-top: 10px;
+}
+.info{
+  font-family: 'Handlee', cursive;
+  line-height: 30px;
+  color: var(--purple-color)
+}
+.title{
+  grid-column: 1/5;
+  height: 200px;
+  font-family: "hpFont";
+  font-size: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color:rgba(73, 48, 95, 0.91);
+  letter-spacing: 5px;
 }
