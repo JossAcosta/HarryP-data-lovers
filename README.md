@@ -1,7 +1,6 @@
 # Harry Potter-Data Lover
-Link: https://jossacosta.github.io/HarryP-data-lovers/blob/master/src/index.html
- https://jossacosta.github.io/HarryP-data-lovers/src/index.html
-  https://github.com/JossAcosta/HarryP-data-lovers/blob/master/src/index.html
+Link: https://jossacosta.github.io/HarryP-data-lovers/src/index.html
+
 ## Índice
 
 * [1. Introducción](#1-Introducción)
